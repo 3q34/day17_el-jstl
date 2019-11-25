@@ -1,5 +1,7 @@
 <%@ page import="cn.itcast.domain.User" %>
-<%@ page import="java.util.Date" %><%--
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: cdx
   Date: 2019/11/25
@@ -9,15 +11,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>对象</title>
+    <title>JSP获取user对象</title>
 </head>
 <body>
 <% User user = new User();
     user.setAge(22);
     user.setBirthday(new Date());
     user.setName("张三");
+
+
     session.setAttribute("u", user);
 %>
-${u}
+${u.name}
+<br>
+${u.birthday}
 </body>
 </html>

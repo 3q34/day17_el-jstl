@@ -1,6 +1,7 @@
 package cn.itcast.domain;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -29,8 +30,13 @@ public class User {
         this.age = age;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getBirthday() {
+        //格式化对象
+        if (birthday != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            return sdf.format(birthday);
+        } else
+            return "";
     }
 
     public void setBirthday(Date birthday) {
