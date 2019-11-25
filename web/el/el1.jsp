@@ -13,6 +13,17 @@
 </head>
 <body>
 ${3<4}<br>
+<% request.setAttribute("name", "张三");
+
+    session.setAttribute("name", "李四");
+    session.setAttribute("age", "33");
+%>
+${requestScope.name}<br>
+${sessionScope.name}<br>
+${age}<br>
+${name}<br>
+
+
 
 </body>
 </html>
